@@ -152,7 +152,7 @@ Conyea, Will
     [@GitHub](https://github.com/willco-1)
 
 Lopez, Esteban
-    [LinkedIn]()
+    [LinkedIn](https://www.linkedin.com/in/estebandlopez/)
     [@GitHub](https://github.com/Esteban-D-Lopez)
 
 Mandal, Dinesh
@@ -186,7 +186,23 @@ ___
 
 ### **Additional references and or resources utilized**
 
-[GitHub](https://github.com/Billie-LS/DeepL_Adventure_Angels)
+splitting data
+[MungingData](https://mungingdata.com/python/split-csv-write-chunk-pandas/)
+
+dealing with compression = gzip
+[Stack Overflow](https://stackoverflow.com/questions/44659851/unicodedecodeerror-utf-8-codec-cant-decode-byte-0x8b-in-position-1-invalid)
+
+numeric only corr()
+[Stack Overflow](https://stackoverflow.com/questions/74305444/error-while-trying-to-run-corr-in-python-with-pandas-module)
+
+color palette
+[seaborn](https://seaborn.pydata.org/tutorial/color_palettes.html)
+
+
+
+
+
+
 
 [GitHub](https://github.com/Billie-LS/give_me_cred/blob/main/credit_risk_resampling.ipynb)
 
