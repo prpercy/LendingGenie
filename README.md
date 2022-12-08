@@ -127,10 +127,6 @@ FileExistsError: [Errno 17] File exists: 'Resources_models'
 You will need to delete directory 'Resources_models'
 ___
 
-## **Project requirements**
-### see starter code
-
----
 ## **Version control**
 
 Version control can be reviewed at:
@@ -195,9 +191,20 @@ dealing with compression = gzip
 numeric only corr()
 [Stack Overflow](https://stackoverflow.com/questions/74305444/error-while-trying-to-run-corr-in-python-with-pandas-module)
 
+find NaN
+[Stack Overflow](https://stackoverflow.com/questions/29530232/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe)
+
 color palette
 [seaborn](https://seaborn.pydata.org/tutorial/color_palettes.html)
 
+horizontal bar graph
+[seaborn](https://hvplot.holoviz.org/reference/pandas/barh.html)
+
+dataframe columns list
+[geeksforgeeks](https://www.geeksforgeeks.org/how-to-get-column-names-in-pandas-dataframe/)
+
+dataframe drop duplicates
+[geeksforgeeks](https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/)
 
 
 
