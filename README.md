@@ -156,7 +156,7 @@ Mandal, Dinesh
     [@GitHub](https://github.com/dinesh-m)
     
 Patil, Pravin
-    [LinkedIn]()
+    [LinkedIn](https://www.linkedin.com/in/pravin-patil-5880301)
     [@GitHub](https://github.com/prpercy)
 
 Loki 'billie' Skylizard
