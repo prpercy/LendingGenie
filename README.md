@@ -206,7 +206,8 @@ dataframe columns list
 dataframe drop duplicates
 [geeksforgeeks](https://www.geeksforgeeks.org/python-pandas-dataframe-drop_duplicates/)
 
-
+PCA — how to choose the number of components
+[mikulskibartosz](https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/)
 
 
 
