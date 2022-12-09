@@ -152,7 +152,7 @@ Lopez, Esteban
     [@GitHub](https://github.com/Esteban-D-Lopez)
 
 Mandal, Dinesh
-    [LinkedIn]()
+    [LinkedIn](https://www.linkedin.com/in/dineshmandal/)
     [@GitHub](https://github.com/dinesh-m)
     
 Patil, Pravin
