@@ -218,10 +218,14 @@ In Depth: Parameter tuning for SVC
 ConvergenceWarning: Liblinear failed to converge
 [Stack Overflow](https://stackoverflow.com/questions/52670012/convergencewarning-liblinear-failed-to-converge-increase-the-number-of-iterati)
 
+Measure runtime of a Jupyter Notebook code cell
+[Stack Overflow](https://stackoverflow.com/questions/43307653/measure-runtime-of-a-jupyter-notebook-code-cell)
+
+Building a Machine Learning Model in Python
+[Frank Andrade](https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a)
 
 
 
-[GitHub](https://github.com/Billie-LS/give_me_cred/blob/main/credit_risk_resampling.ipynb)
 
 [Stack Overflow](https://stackoverflow.com/questions/38338822/why-do-we-import-scikit-learn-with-sklearn)
 
