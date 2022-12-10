@@ -209,6 +209,15 @@ dataframe drop duplicates
 PCA — how to choose the number of components
 [mikulskibartosz](https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/)
 
+LinearSVC classifier
+[DataTechNotes](https://www.datatechnotes.com/2020/07/classification-example-with-linearsvm-in-python.html)
+
+In Depth: Parameter tuning for SVC
+[All things AI](https://medium.com/all-things-ai/in-depth-parameter-tuning-for-svc-758215394769)
+
+ConvergenceWarning: Liblinear failed to converge
+[Stack Overflow](https://stackoverflow.com/questions/52670012/convergencewarning-liblinear-failed-to-converge-increase-the-number-of-iterati)
+
 
 
 
