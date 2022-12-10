@@ -1,3 +1,16 @@
+'''
+    SageMaker modelling file
+    
+    Steps to follow:
+    1. store data in s3 using special format (use function store_data_s3)
+    2. create model (use create_model function to create it)
+    3. fit the model
+    4. deploy model
+    5. predict using the model
+    6. Delete sagemaker endpoint
+    
+'''
+
 import sagemaker
 import sagemaker.amazon.common as smac
 from sagemaker import get_execution_role
