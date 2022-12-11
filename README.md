@@ -225,6 +225,42 @@ Building a Machine Learning Model in Python
 [Frank Andrade](https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a)
 
 
+KNeighborsClassifier()
+[scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
+
+
+Linear Models
+[scikit-learn](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+
+LogisticRegression()
+[scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+
+Classifier comparison
+[scikit-learn](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html)
+
+XGB Classifier
+[AnalyticsVidhya](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)
+
+Install XGBoost
+[XGBoost](https://xgboost.readthedocs.io/en/stable/install.html)
+
+XGBoost
+[towardsdatascience](https://towardsdatascience.com/getting-started-with-xgboost-in-scikit-learn-f69f5f470a97)
+
+
+
+
+Kaggle - Lending Club data
+[Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club)
+
+Kaggle - Lending Club defaulters predictions
+[Kaggle](https://www.kaggle.com/code/faressayah/lending-club-loan-defaulters-prediction)
+
+Kaggle - Lending Club categorical features analysis
+[Stack Overflow](https://www.kaggle.com/code/mariiagusarova/categorical-features-analysis-on-loan-fintech-data)
+
+
+
 
 
 [Stack Overflow](https://stackoverflow.com/questions/38338822/why-do-we-import-scikit-learn-with-sklearn)
