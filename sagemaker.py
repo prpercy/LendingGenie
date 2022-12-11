@@ -7,7 +7,8 @@
     3. fit the model
     4. deploy model
     5. predict using the model
-    6. Delete sagemaker endpoint
+    6. Evaluate
+    7. Delete the SageMaker endpoint
     
 '''
 
@@ -56,8 +57,61 @@ def encode_data(bucket, prefix, role, key, df_X_data, df_y_data, train_or_test):
     return s3_data
         
 
-# function to prepare learner model
-def create_model(bucket, prefix, role,model_type, instance_type,feature_dim):
+# function to prepare model
+
+''' 
+instance_type = "ml.m4.xlarge"
+model_type = "linear-learner"
+
+# for logistic regression: 
+        hyperparams = {
+            "feature_dim": # of features,
+            "predictor_type": "binary_classifier",
+            "epochs": # of epochs,
+        }
+        
+# Binary classifier with automated threshold tuning
+        hyperparams = {
+            "feature_dim": # of features,
+            "predictor_type": "binary_classifier",
+            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
+            "target_recall": 0.9,
+            "epochs": # of epochs,
+        }
+
+# Binary classifier with class weights and automated threshold tuning
+        hyperparams = {
+            "feature_dim": # of features,
+            "predictor_type": "binary_classifier",
+            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
+            "target_recall": 0.9,
+            "positive_example_weight_mult": "balanced",
+            "epochs": # of epochs,
+        }
+
+# Linear SVM
+        hyperparams = {
+            "feature_dim": # of features,
+            "predictor_type": "binary_classifier",
+            "loss": "hinge_loss",
+            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
+            "target_recall": 0.9,
+            "epochs": # of epochs,
+        }
+
+# Linear SVM with balanced class weights
+        hyperparams = {
+            "feature_dim": # of features,
+            "predictor_type": "binary_classifier",
+            "loss": "hinge_loss",
+            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
+            "target_recall": 0.9,
+            "positive_example_weight_mult": "balanced",
+            "epochs": # of epochs,
+        }
+
+'''
+def create_model(bucket, prefix, role,model_type, instance_type,hyperparams):
     
     sess = sagemaker.Session()
     # Import the container image
@@ -67,17 +121,13 @@ def create_model(bucket, prefix, role,model_type, instance_type,feature_dim):
       container,
       role,
       train_instance_count=1,
-      train_instance_type="ml.m4.xlarge",
+      train_instance_type=instance_type,
       output_path="s3://{}/{}/output".format(bucket, prefix),
       sagemaker_session=sess
       )
 
-    # Define linear learner hyperparameters
-    model_learner.set_hyperparameters(
-        feature_dim=feature_dim,
-        mini_batch_size=200,
-        predictor_type="binary_classifier"
-    )
+    # Define learner hyperparameters
+    model_learner.set_hyperparameters(**hyperparams)
     
     return model_learner
 
@@ -91,6 +141,9 @@ def fit_model(model_learner, s3_train_data,s3_test_data):
 # Deploy an instance of the learner model to create a predictor model
 def deploy_model(model_learner, instance_type):
     model_predictor = model_learner.deploy(initial_instance_count=1, instance_type=instance_type)
+    model_predictor.serializer = csv_serializer
+    model_predictor.deserializer = json_deserializer
+    return model_predictor
     
 # predict using predictor model
 def predict(model_predictor,X_test_scaled):
@@ -106,6 +159,48 @@ def predict(model_predictor,X_test_scaled):
 
     return y_predictions
 
+def evaluate(model_predictor, X_test_scaled, y_test_scaled, model_name, verbose=True):
+    """
+    Evaluate a model on a test set given the prediction endpoint.  Return binary classification metrics.
+    """
+    y_predictions = predict(model_predictor,X_test_scaled)
+
+    # calculate true positives, false positives, true negatives, false negatives
+    tp = np.logical_and(y_test_scaled, y_predictions).sum()
+    fp = np.logical_and(1 - y_test_scaled, y_predictions).sum()
+    tn = np.logical_and(1 - y_test_scaled, 1 - y_predictions).sum()
+    fn = np.logical_and(y_test_scaled, 1 - y_predictions).sum()
+
+    # calculate binary classification metrics
+    recall = tp / (tp + fn)
+    precision = tp / (tp + fp)
+    accuracy = (tp + tn) / (tp + fp + tn + fn)
+    f1 = 2 * precision * recall / (precision + recall)
+
+    if verbose:
+        print(pd.crosstab(y_test_scaled, y_predictions, rownames=["actuals"], colnames=["predictions"]))
+        print("\n{:<11} {:.3f}".format("Recall:", recall))
+        print("{:<11} {:.3f}".format("Precision:", precision))
+        print("{:<11} {:.3f}".format("Accuracy:", accuracy))
+        print("{:<11} {:.3f}".format("F1:", f1))
+
+    return {
+        "TP": tp,
+        "FP": fp,
+        "FN": fn,
+        "TN": tn,
+        "Precision": precision,
+        "Recall": recall,
+        "Accuracy": accuracy,
+        "F1": f1,
+        "Model": model_name,
+    }
+
 # Delete Amazon SageMaker endpoint
 def delete_endpoint(model_predictor):
-    sagemaker.Session().delete_endpoint(model_predictor.endpoint)
+    try:
+        model_predictor.delete_model()
+        sagemaker.Session().delete_endpoint(model_predictor.endpoint)
+        print("Deleted {}".format(predictor.endpoint))
+    except:
+        print("Already deleted: {}".format(predictor.endpoint))
