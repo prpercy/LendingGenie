@@ -43,7 +43,7 @@ def store_data_s3(bucket, prefix, role, data_dictionary):
     return s3_train_data,s3_test_data 
         
 # function to Encode the data as Protocol Buffer
-def encode_data(bucket, prefix, role, key, df_X_data, df_y_data, train_or_test):
+def encode_data_pbuf(bucket, prefix, role, key, df_X_data, df_y_data, train_or_test):
     
     buf = io.BytesIO()
     vectors = np.array(df_X_data).astype("float32")
@@ -58,59 +58,6 @@ def encode_data(bucket, prefix, role, key, df_X_data, df_y_data, train_or_test):
         
 
 # function to prepare model
-
-''' 
-instance_type = "ml.m4.xlarge"
-model_type = "linear-learner"
-
-# for logistic regression: 
-        hyperparams = {
-            "feature_dim": # of features,
-            "predictor_type": "binary_classifier",
-            "epochs": # of epochs,
-        }
-        
-# Binary classifier with automated threshold tuning
-        hyperparams = {
-            "feature_dim": # of features,
-            "predictor_type": "binary_classifier",
-            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
-            "target_recall": 0.9,
-            "epochs": # of epochs,
-        }
-
-# Binary classifier with class weights and automated threshold tuning
-        hyperparams = {
-            "feature_dim": # of features,
-            "predictor_type": "binary_classifier",
-            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
-            "target_recall": 0.9,
-            "positive_example_weight_mult": "balanced",
-            "epochs": # of epochs,
-        }
-
-# Linear SVM
-        hyperparams = {
-            "feature_dim": # of features,
-            "predictor_type": "binary_classifier",
-            "loss": "hinge_loss",
-            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
-            "target_recall": 0.9,
-            "epochs": # of epochs,
-        }
-
-# Linear SVM with balanced class weights
-        hyperparams = {
-            "feature_dim": # of features,
-            "predictor_type": "binary_classifier",
-            "loss": "hinge_loss",
-            "binary_classifier_model_selection_criteria": "precision_at_target_recall",
-            "target_recall": 0.9,
-            "positive_example_weight_mult": "balanced",
-            "epochs": # of epochs,
-        }
-
-'''
 def create_model(bucket, prefix, role,model_type, instance_type,hyperparams):
     
     sess = sagemaker.Session()
@@ -141,35 +88,33 @@ def fit_model(model_learner, s3_train_data,s3_test_data):
 # Deploy an instance of the learner model to create a predictor model
 def deploy_model(model_learner, instance_type):
     model_predictor = model_learner.deploy(initial_instance_count=1, instance_type=instance_type)
+    # predictor configurations
     model_predictor.serializer = csv_serializer
     model_predictor.deserializer = json_deserializer
     return model_predictor
     
 # predict using predictor model
 def predict(model_predictor,X_test_scaled):
-    # predictor configurations
-    model_predictor.serializer = csv_serializer
-    model_predictor.deserializer = json_deserializer
     # Making some predictions using the test data
     model_predictions = model_predictor.predict(X_test_scaled)
     # Creating a list with the predicted values
     y_predictions = [np.uint8(value["predicted_label"]) for value in model_predictions["predictions"]]
     # Transforming the list into an array
     y_predictions = np.array(y_predictions)
-
     return y_predictions
 
-def evaluate(model_predictor, X_test_scaled, y_test_scaled, model_name, verbose=True):
+# evaluation of the model
+def evaluate(model_predictor, X_test_scaled, y_test, model_name, verbose=True):
     """
     Evaluate a model on a test set given the prediction endpoint.  Return binary classification metrics.
     """
     y_predictions = predict(model_predictor,X_test_scaled)
 
     # calculate true positives, false positives, true negatives, false negatives
-    tp = np.logical_and(y_test_scaled, y_predictions).sum()
-    fp = np.logical_and(1 - y_test_scaled, y_predictions).sum()
-    tn = np.logical_and(1 - y_test_scaled, 1 - y_predictions).sum()
-    fn = np.logical_and(y_test_scaled, 1 - y_predictions).sum()
+    tp = np.logical_and(y_test, y_predictions).sum()
+    fp = np.logical_and(1 - y_test, y_predictions).sum()
+    tn = np.logical_and(1 - y_test, 1 - y_predictions).sum()
+    fn = np.logical_and(y_test, 1 - y_predictions).sum()
 
     # calculate binary classification metrics
     recall = tp / (tp + fn)
@@ -178,7 +123,7 @@ def evaluate(model_predictor, X_test_scaled, y_test_scaled, model_name, verbose=
     f1 = 2 * precision * recall / (precision + recall)
 
     if verbose:
-        print(pd.crosstab(y_test_scaled, y_predictions, rownames=["actuals"], colnames=["predictions"]))
+        print(pd.crosstab(y_test, y_predictions, rownames=["actuals"], colnames=["predictions"]))
         print("\n{:<11} {:.3f}".format("Recall:", recall))
         print("{:<11} {:.3f}".format("Precision:", precision))
         print("{:<11} {:.3f}".format("Accuracy:", accuracy))
