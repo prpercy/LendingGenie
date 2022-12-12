@@ -247,6 +247,10 @@ Install XGBoost
 XGBoost
 [towardsdatascience](https://towardsdatascience.com/getting-started-with-xgboost-in-scikit-learn-f69f5f470a97)
 
+Kaggle - XGBoost classifier and hyperparameter tuning 85%
+[Kaggle](https://www.kaggle.com/code/michalbrezk/xgboost-classifier-and-hyperparameter-tuning-85)
+
+
 
 
 
