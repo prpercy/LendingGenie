@@ -250,6 +250,14 @@ XGBoost
 Kaggle - XGBoost classifier and hyperparameter tuning 85%
 [Kaggle](https://www.kaggle.com/code/michalbrezk/xgboost-classifier-and-hyperparameter-tuning-85)
 
+How to Best Tune Multithreading Support for XGBoost in Python
+[machinelearningmastery](https://machinelearningmastery.com/best-tune-multithreading-support-xgboost-python/)
+
+AttributeError: 'GridSearchCV' object has no attribute 'grid_scores_'
+[csdn.net](https://blog.csdn.net/weixin_44025103/article/details/125561477)
+
+
+
 
 
 
