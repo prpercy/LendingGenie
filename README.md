@@ -224,10 +224,8 @@ Measure runtime of a Jupyter Notebook code cell
 Building a Machine Learning Model in Python
 [Frank Andrade](https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a)
 
-
 KNeighborsClassifier()
 [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
-
 
 Linear Models
 [scikit-learn](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
@@ -242,10 +240,16 @@ XGB Classifier
 [AnalyticsVidhya](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)
 
 Install XGBoost
-[XGBoost](https://xgboost.readthedocs.io/en/stable/install.html)
+[dmlc_XGBoost](https://xgboost.readthedocs.io/en/stable/install.html)
+
+XGBoost
+[dmlc_XGBoost](https://xgboost.readthedocs.io/en/stable/python/python_api.html)
 
 XGBoost
 [towardsdatascience](https://towardsdatascience.com/getting-started-with-xgboost-in-scikit-learn-f69f5f470a97)
+
+Using XGBoost in Python Tutorial
+[datacamp](https://www.datacamp.com/tutorial/xgboost-in-python)
 
 Kaggle - XGBoost classifier and hyperparameter tuning 85%
 [Kaggle](https://www.kaggle.com/code/michalbrezk/xgboost-classifier-and-hyperparameter-tuning-85)
@@ -255,6 +259,13 @@ How to Best Tune Multithreading Support for XGBoost in Python
 
 AttributeError: 'GridSearchCV' object has no attribute 'grid_scores_'
 [csdn.net](https://blog.csdn.net/weixin_44025103/article/details/125561477)
+
+How to check models AUC score
+[projectpro](https://www.projectpro.io/recipes/check-models-auc-score-using-cross-validation-in-python)
+
+
+
+
 
 
 
