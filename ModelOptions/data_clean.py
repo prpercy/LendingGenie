@@ -69,7 +69,7 @@ cleaner = {'addr_state': {'PA': 0.0,  'SD': 1.0,  'IL': 2.0,  'NJ': 3.0,
 
 
 
-def data_clean:
+def data_clean():
      
     mypath = "../../LG_Resources/Resources/lending-club/accepted_2007_to_2018Q4.csv/accepted_2007_to_2018Q4.csv"
     # inputmypath = input("Type in the relative path to the csv file with the loan database:")
