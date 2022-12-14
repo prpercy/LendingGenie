@@ -33,12 +33,12 @@ def store_data_s3(bucket, prefix, role, data_dictionary):
     # Encode the training data as Protocol Buffer
     X_train = data_dictionary['X_train']
     y_train = data_dictionary['y_train']
-    s3_train_data = encode_data(bucket, prefix, role, "model_train.data", X_train, y_train, "train")
+    s3_train_data = encode_data_pbuf(bucket, prefix, role, "model_train.data", X_train, y_train, "train")
     
     # Encode the testing data as Protocol Buffer
     X_test = data_dictionary['X_test']
     y_test = data_dictionary['y_test']
-    s3_test_data = encode_data(bucket, prefix, role, "model_test.data", X_test, y_test, "test")
+    s3_test_data = encode_data_pbuf(bucket, prefix, role, "model_test.data", X_test, y_test, "test")
     
     return s3_train_data,s3_test_data 
         
@@ -82,12 +82,12 @@ def create_model(bucket, prefix, role,model_type, instance_type,hyperparams):
 # function to fit the leaner model with train and test data
 def fit_model(model_learner, s3_train_data,s3_test_data):
     # Fitting the learner model
-    model_learner = model_learner.fit({"train": s3_train_data, "test": s3_test_data})
+    model_learner.fit({"train": s3_train_data, "test": s3_test_data})
     return model_learner
     
 # Deploy an instance of the learner model to create a predictor model
-def deploy_model(model_learner, instance_type):
-    model_predictor = model_learner.deploy(initial_instance_count=1, instance_type=instance_type)
+def deploy_model(model_predictor, instance_type):
+    model_predictor.deploy(initial_instance_count=1, instance_type=instance_type)
     # predictor configurations
     model_predictor.serializer = csv_serializer
     model_predictor.deserializer = json_deserializer
