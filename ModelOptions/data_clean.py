@@ -18,7 +18,7 @@
     # sys       : 3.7.13 (default, Mar 28 2022, 08:03:21) [MSC v.1916 64 bit (AMD64)]
 
 #dicionary used to cleanup data
-    cleaner = {'addr_state': {'PA': 0.0,  'SD': 1.0,  'IL': 2.0,  'NJ': 3.0,
+cleaner = {'addr_state': {'PA': 0.0,  'SD': 1.0,  'IL': 2.0,  'NJ': 3.0,
   'GA': 4.0,  'MN': 5.0,  'SC': 6.0,  'RI': 7.0,  'TX': 8.0,  'NC': 9.0,  'CA': 10.0,  'VA': 11.0,
   'AZ': 12.0,  'NY': 13.0,  'IN': 14.0,  'MD': 15.0,  'KS': 16.0,  'NM': 17.0,  'AL': 18.0,  'WA': 19.0,
   'MO': 20.0,  'OH': 21.0,  'LA': 22.0,  'FL': 23.0,  'CO': 24.0,  'MI': 25.0,  'TN': 26.0,
