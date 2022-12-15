@@ -1,25 +1,26 @@
 # project2
 LendingGenie
 
-# **Columbia University Engineering, New York FinTech BootCamp** 
+# **Columbia University Engineering, New York FinTech Bootcamp** 
 # **August 2022 Cohort**
 ![image1](images/image1.png)
 ## *Project 2 - LendingGenie*
-Objective - 
+Objective - LendingGenie provides a flexible solution to financial institutions trying to broaden their credit offerings to consumers by using machine learning to effectively perform credit risk modeling using existing customer's data. Our objective is to enhance the value financial institutions' data and provide access to capital to consumers by relying on alternative data points to evaluate credit risk relying using technology as an enabler. 
 
-Scenario -   
+Scenario -   Financial institutions process and collect data from customers at a massive scale. Using machine learning, financial institutions can now process and analyze data to effectively build a model using machine learning methods in order to be able to accurately estimate a customer's credit risk and assess potential lending opportunities and maximize the customer's value. Additionally, customers who do not typically have access to credit will now be offered financing opportunities based on non-traditional credit risk metrics in order to be considered for financing. This automated process also allows financial institutions to effectively establish their risk parameters to fit a credit risk model that is specifically tailored to their risk apetite based on historical data. 
 
 Product - 
 
-* > 
-* > 
-* > 
-* > 
-* > 
+* > Our product is a cloud-based lending-as-a-service (LaaS) solution that can be offered to financial institutions as an API.
+* > The product uses Python-libraries including pandas and sci-kit learn, among others, to clean, process, and fit models based on the desired risk parameters to accurately predict customers fit for lending opportunities. 
+* > The product is deployed using Amazon Web Services (AWS). Specifically, SageMaker in order for clients to be able to run the model on the cloud. 
+* > Subsequent development points include establishing a track-record of proven results to then move on a large-scaling process involving factoring to alternative investment funds, banks, and other institutions that look to diversify their fixed income portfolio using a risk-based approach. 
 
 ---
 ## **Technologies**
 ---
+
+
 ### **Dependencies**
 
 This project leverages Jupyter Lab v3.4.4 and Python version 3.9.13 packaged by conda-forge | (main, May 27 2022, 17:01:00) with the following packages:
