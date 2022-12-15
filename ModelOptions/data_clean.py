@@ -71,15 +71,35 @@ cleaner = {'addr_state': {'PA': 0.0,  'SD': 1.0,  'IL': 2.0,  'NJ': 3.0,
 
 def data_clean():
      
-    mypath = "../../LG_Resources/Resources/lending-club/accepted_2007_to_2018Q4.csv/accepted_2007_to_2018Q4.csv"
-    # inputmypath = input("Type in the relative path to the csv file with the loan database:")
-    
-    #read data into df
-    df = pd.read_csv(
-        Path(mypath),  
+    #read data into df using user input
+        #alternatively, comment out line below and input path
+        # inputmypath = "../../LG_Resources/Resources/lending-club/accepted_2007_to_2018Q4.csv/accepted_2007_to_2018Q4.csv"  
+    inputmypath = input("Type in the relative path to the csv file with the loan database (incl. file name):")
+    gz = ""
+
+    while gz == "":
+        gz = input("Is your input file a gz file? Answer 'y' or 'n' only:")
+     
+        if gz == "y" or gz == "n":
+            gz            
+
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
+            gz = ""
+
+    if gz == 'y':
+        df= pd.read_csv(Path(inputmypath), 
+            infer_datetime_format=True,
+            parse_dates = True,
+            compression='gzip', 
+            low_memory=False)
+    else:    
+        df = pd.read_csv(
+        Path(inputmypath),
         infer_datetime_format=True,
         parse_dates = True,
         low_memory=False)
+
 
     #remove unnecessary coulmns
     nan_values = pd.DataFrame(df.isna().sum(),columns = ["NAN Count"]).reset_index()
