@@ -1,6 +1,3 @@
-# project2
-LendingGenie
-
 # **Columbia University Engineering, New York FinTech Bootcamp** 
 # **August 2022 Cohort**
 ![image1](images/image1.png)
@@ -283,39 +280,6 @@ Kaggle - Lending Club defaulters predictions
 Kaggle - Lending Club categorical features analysis
 [Stack Overflow](https://www.kaggle.com/code/mariiagusarova/categorical-features-analysis-on-loan-fintech-data)
 
-
-
-
-
-[Stack Overflow](https://stackoverflow.com/questions/38338822/why-do-we-import-scikit-learn-with-sklearn)
-
-[Stack Overflow](https://stackoverflow.com/questions/54116693/modulenotfounderror-no-module-named-seaborn-in-python-ide)
-
-[Stack Overflow](https://stackoverflow.com/questions/43162506/undefinedmetricwarning-f-score-is-ill-defined-and-being-set-to-0-0-in-labels-wi)
-
-[Stack Overflow](https://stackoverflow.com/questions/54879434/how-to-use-pickle-to-save-sklearn-model)
-
-[FolksTalk](https://www.folkstalk.com/tech/how-to-save-a-pickle-file-with-code-examples/)
-
-[PracticalDataScience](https://practicaldatascience.co.uk/machine-learning/how-to-save-and-load-machine-learning-models-using-pickle)
-
-[AnalyticsVidhya](https://www.analyticsvidhya.com/blog/2021/08/quick-hacks-to-save-machine-learning-model-using-pickle-and-joblib/)
-
-[StackAbuse](https://stackabuse.com/scikit-learn-save-and-restore-models/)
-
-[Seaborn](https://seaborn.pydata.org/installing.html)
-
-[scikitlearn](https://scikit-learn.org/stable/modules/ensemble.html?highlight=classifier)
-
-[Python.land](https://python.land/data-processing/python-yaml)
-
-[PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
-
-[MachineLearningMastery](https://machinelearningmastery.com/save-load-keras-deep-learning-models/)
-
-[MachineLearningMastery](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/)
-
-[MachineLearningMastery](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)
 
 ___
 ## **License**
