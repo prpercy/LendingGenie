@@ -1,25 +1,23 @@
-# project2
-LendingGenie
-
-# **Columbia University Engineering, New York FinTech BootCamp** 
+# **Columbia University Engineering, New York FinTech Bootcamp** 
 # **August 2022 Cohort**
 ![image1](images/image1.png)
 ## *Project 2 - LendingGenie*
-Objective - 
+Objective - LendingGenie provides a flexible solution to financial institutions trying to broaden their credit offerings to consumers by using machine learning to effectively perform credit risk modeling using existing customer's data. Our objective is to enhance the value financial institutions' data and provide access to capital to consumers by relying on alternative data points to evaluate credit risk relying using technology as an enabler. 
 
-Scenario -   
+Scenario -   Financial institutions process and collect data from customers at a massive scale. Using machine learning, financial institutions can now process and analyze data to effectively build a model using machine learning methods in order to be able to accurately estimate a customer's credit risk and assess potential lending opportunities and maximize the customer's value. Additionally, customers who do not typically have access to credit will now be offered financing opportunities based on non-traditional credit risk metrics in order to be considered for financing. This automated process also allows financial institutions to effectively establish their risk parameters to fit a credit risk model that is specifically tailored to their risk apetite based on historical data. 
 
 Product - 
 
-* > 
-* > 
-* > 
-* > 
-* > 
+* > Our product is a cloud-based lending-as-a-service (LaaS) solution that can be offered to financial institutions as an API.
+* > The product uses Python-libraries including pandas and sci-kit learn, among others, to clean, process, and fit models based on the desired risk parameters to accurately predict customers fit for lending opportunities. 
+* > The product is deployed using Amazon Web Services (AWS). Specifically, SageMaker in order for clients to be able to run the model on the cloud. 
+* > Subsequent development points include establishing a track-record of proven results to then move on a large-scaling process involving factoring to alternative investment funds, banks, and other institutions that look to diversify their fixed income portfolio using a risk-based approach. 
 
 ---
 ## **Technologies**
 ---
+
+
 ### **Dependencies**
 
 This project leverages Jupyter Lab v3.4.4 and Python version 3.9.13 packaged by conda-forge | (main, May 27 2022, 17:01:00) with the following packages:
@@ -282,39 +280,6 @@ Kaggle - Lending Club defaulters predictions
 Kaggle - Lending Club categorical features analysis
 [Stack Overflow](https://www.kaggle.com/code/mariiagusarova/categorical-features-analysis-on-loan-fintech-data)
 
-
-
-
-
-[Stack Overflow](https://stackoverflow.com/questions/38338822/why-do-we-import-scikit-learn-with-sklearn)
-
-[Stack Overflow](https://stackoverflow.com/questions/54116693/modulenotfounderror-no-module-named-seaborn-in-python-ide)
-
-[Stack Overflow](https://stackoverflow.com/questions/43162506/undefinedmetricwarning-f-score-is-ill-defined-and-being-set-to-0-0-in-labels-wi)
-
-[Stack Overflow](https://stackoverflow.com/questions/54879434/how-to-use-pickle-to-save-sklearn-model)
-
-[FolksTalk](https://www.folkstalk.com/tech/how-to-save-a-pickle-file-with-code-examples/)
-
-[PracticalDataScience](https://practicaldatascience.co.uk/machine-learning/how-to-save-and-load-machine-learning-models-using-pickle)
-
-[AnalyticsVidhya](https://www.analyticsvidhya.com/blog/2021/08/quick-hacks-to-save-machine-learning-model-using-pickle-and-joblib/)
-
-[StackAbuse](https://stackabuse.com/scikit-learn-save-and-restore-models/)
-
-[Seaborn](https://seaborn.pydata.org/installing.html)
-
-[scikitlearn](https://scikit-learn.org/stable/modules/ensemble.html?highlight=classifier)
-
-[Python.land](https://python.land/data-processing/python-yaml)
-
-[PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
-
-[MachineLearningMastery](https://machinelearningmastery.com/save-load-keras-deep-learning-models/)
-
-[MachineLearningMastery](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/)
-
-[MachineLearningMastery](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)
 
 ___
 ## **License**

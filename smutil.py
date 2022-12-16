@@ -146,6 +146,6 @@ def delete_endpoint(model_predictor):
     try:
         model_predictor.delete_model()
         sagemaker.Session().delete_endpoint(model_predictor.endpoint)
-        print("Deleted {}".format(predictor.endpoint))
+        print("Deleted {}".format(model_predictor.endpoint))
     except:
-        print("Already deleted: {}".format(predictor.endpoint))
+        print("Already deleted: {}".format(model_predictor.endpoint))
