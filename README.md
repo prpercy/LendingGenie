@@ -178,7 +178,16 @@ Santiago Pedemonte
     [LinkedIn](https://www.linkedin.com/in/s-pedemonte/)
     [@GitHub](https://github.com/Santiago-Pedemonte)
 
+___
 
+### **Summary of Analysis **
+
+>* Data has 150 features. After data clean up and preparation number of features were reduced to 111.
+>* Post PCA analysis, number of features were further reduced to 62 (while maintaining 95% explanation)
+
+Following is the summary of results:
+
+![results](images/results.png)
 ___
 
 ### **Additional references and or resources utilized**
@@ -263,16 +272,6 @@ AttributeError: 'GridSearchCV' object has no attribute 'grid_scores_'
 
 How to check models AUC score
 [projectpro](https://www.projectpro.io/recipes/check-models-auc-score-using-cross-validation-in-python)
-
-
-
-
-
-
-
-
-
-
 
 Kaggle - Lending Club data
 [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club)
