@@ -27,6 +27,8 @@ This project leverages Jupyter Lab v3.4.4 and Python version 3.9.13 packaged by 
 
 * [os](https://docs.python.org/3/library/os.html) - module provides a portable way of using operating system dependent functionality.
 
+* [opendatasets](https://pypi.org/project/opendatasets/0.0.103/) - module is a Python library for downloading datasets from online sources like Kaggle and Google Drive using a simple Python command.
+
 * [NumPy](https://numpy.org/doc/stable/user/absolute_beginners.html) - an open source Python library used for working with arrays, contains multidimensional array and matrix data structures with functions for working in domain of linear algebra, fourier transform, and matrices.
 
 * [pandas](https://pandas.pydata.org/docs/) - software library written for the python programming language for data manipulation and analysis.
@@ -96,11 +98,12 @@ git version 2.37.2
 ---
 ## *Installation of application (i.e. github clone)*
 
- In the terminal, navigate to directory where you want to install this application from the repository and enter the following command
+In the terminal, navigate to directory where you want to install this application from the repository and enter the following command
 
 ```python
 git clone git@github.com:prpercy/LendingGenie.git
 ```
+
 
 ---
 ## **Usage**
@@ -114,7 +117,7 @@ From terminal, the installed application is run through jupyter lab web-based in
 The file you will run is:
 
 ```python
-lend_genie.ipynb
+lending_genie.ipynb
 
 ```
 
