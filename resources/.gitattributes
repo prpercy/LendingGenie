@@ -4,3 +4,6 @@
 .csv1.csv filter=lfs diff=lfs merge=lfs -text
 .csv2.csv filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.csv1.csv filter=lfs diff=lfs merge=lfs -text
+*.csv2.csv filter=lfs diff=lfs merge=lfs -text
