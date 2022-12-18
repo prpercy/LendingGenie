@@ -13,9 +13,20 @@ Product -
 * > The product is deployed using Amazon Web Services (AWS). Specifically, SageMaker in order for clients to be able to run the model on the cloud. 
 * > Subsequent development points include establishing a track-record of proven results to then move on a large-scaling process involving factoring to alternative investment funds, banks, and other institutions that look to diversify their fixed income portfolio using a risk-based approach. 
 
----
+___
+
+### **Analysis Summary**
+
+>* Data has 151 features. After data clean up and preparation number of features were reduced to 112.
+>* Post PCA analysis, number of features were further reduced to 62 (while maintaining 95% explained variance ratio)
+
+Following is the summary of results:
+
+![results](images/results.png)
+___
+
 ## **Technologies**
----
+___
 
 
 ### **Dependencies**
@@ -104,6 +115,28 @@ In the terminal, navigate to directory where you want to install this applicatio
 git clone git@github.com:prpercy/LendingGenie.git
 ```
 
+You will require Kaggle API credentials to run the jupyter lab notebook.
+
+How to Use Kaggle - Public API
+[Kaggle](https://www.kaggle.com/docs/api)
+
+Kaggle - opendatasets
+[Kaggle](https://pypi.org/project/opendatasets/)
+
+```python
+> pip install opendatasets --upgrade
+
+```
+
+```python
+> pip install kaggle
+
+```
+In order to use the Kaggle’s public API, you must first authenticate using an API token. From the site header, click on your user profile picture, then on “My Account” from the dropdown menu. This will take you to your account settings at [KaggleAccount](https://www.kaggle.com/account). Scroll down to the section of the page labelled API:
+
+To create a new token, click on the “Create New API Token” button. This will download a fresh authentication token onto your machine.
+
+Once you obtain your Kaggle credentials and download the associated 'kaggle.json', proceed to usage below.
 
 ---
 ## **Usage**
@@ -120,6 +153,10 @@ The file you will run is:
 lending_genie.ipynb
 
 ```
+Once it starts to run, you will be asked to enter your credentials-
+
+![Credentials](images/request_credentials.png)
+
 
 If running the code generates error:
 ```python
@@ -178,16 +215,6 @@ Santiago Pedemonte
     [LinkedIn](https://www.linkedin.com/in/s-pedemonte/)
     [@GitHub](https://github.com/Santiago-Pedemonte)
 
-___
-
-### **Summary of Analysis **
-
->* Data has 150 features. After data clean up and preparation number of features were reduced to 111.
->* Post PCA analysis, number of features were further reduced to 62 (while maintaining 95% explanation)
-
-Following is the summary of results:
-
-![results](images/results.png)
 ___
 
 ### **Additional references and or resources utilized**
